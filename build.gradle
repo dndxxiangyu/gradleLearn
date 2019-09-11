@@ -1,0 +1,13 @@
+ext {
+    local = "hello from build.gradle"
+}
+//./gradlew printProperties -Pcmd='hello world'
+task printProperties {
+    doLast {
+        println local
+        println propertiesFile
+        if (project.hasProperty("cmd")) {
+            println cmd
+        } 
+    }
+}
